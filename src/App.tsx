@@ -1,23 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import './components/project/Project.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import {ProjectList, ProjectModal} from "./components/index";
+import { Button } from 'react-bootstrap';
+import "react-datepicker/dist/react-datepicker.css"
 
 function App() {
+
+  const [showModal, setShowModal] = useState(false)
+  const [refresh, setRefresh] = useState(false)
+
+  React.useEffect(() => {
+    setRefresh(!refresh)
+    console.log("Refresh")
+  }, [showModal])
+
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <h1>Projects</h1>
+        <Button variant="primary" onClick={( )=> setShowModal(true)}>Create Project</Button>
+        <ProjectModal action='create' showModal={showModal} setShowModal={setShowModal} />
+        <ProjectList refresh={refresh}/>
       </header>
     </div>
   );
