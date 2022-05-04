@@ -24,3 +24,5 @@ yarn build
 ```
 
 to bundle your application
+
+It requires a backend which can be found https://github.com/rubenmaharjan/tasker-server
