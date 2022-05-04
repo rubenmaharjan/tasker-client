@@ -1,4 +1,4 @@
-import { Project } from "../components/project/Project.model";
+import { Project, Deliverable, DeliverableList } from "../components/project/Project.model";
 import {ApiResponse, ApiWrapper} from "./api";
 
 export  class ProjectApi extends ApiWrapper{
@@ -14,6 +14,11 @@ export  class ProjectApi extends ApiWrapper{
 
     async editProject(project: Project){
         const response: ApiResponse<any> =  await this.apisauce.put(`project/${project?.id}/`, project)
+        return this.prepareResponse<any>(response);
+    }
+
+    async createDeliverables(deliverables: DeliverableList){
+        const response: ApiResponse<any> =  await this.apisauce.post('deliverable/', deliverables)
         return this.prepareResponse<any>(response);
     }
 }

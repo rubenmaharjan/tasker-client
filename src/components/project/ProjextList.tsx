@@ -15,7 +15,7 @@ export const ProjectList: React.FC<any> = ({refresh}) => {
     React.useEffect(()=>{
         console.log("ProjectList UseEffect")
         refrestList()
-    },[refresh])
+    },[refresh, showModal])
 
     const refrestList = () => {
         Promise.all([ProjectApi.getAllProjects()]).then( response => {
@@ -42,10 +42,15 @@ export const ProjectList: React.FC<any> = ({refresh}) => {
             refrestList()
         });
     }
+  const divStyle = {
+   display: 'flex',
+   justifyContent: 'space-evenly',
+}
+
 
     const isActive = (currProject:Project) => {
         if (currProject.active){
-            return <div>
+            return <div style={divStyle}>
                 <Button onClick={()=> {setShowModal(true); setProject(currProject)}}>Edit</Button>
                 <ProjectModal action="edit" showModal={showModal} setShowModal={setShowModal} project={project}/>
                 <Button onClick={() => onArchive(currProject)}>Archive</Button>

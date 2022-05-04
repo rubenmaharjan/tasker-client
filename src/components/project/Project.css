@@ -38,12 +38,15 @@ form {
   }
   .submitDiv {
     display: flex;
-    margin: 5vh;
   }
   .tableDiv {
     margin-top: 5vh;
+    width: 50vw;
   }
  
+  .addWBSButton {
+    margin: 2vh;
+  }
   .submitButton {
     background-color: #74c75f;
     color: white;
