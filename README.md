@@ -9,6 +9,15 @@ For development teams who need to manage a project’s task schedule, Tasker is 
 
 Tasker client side is currently under development. This software allows you to create, edit, archive and unarchive a "project". It also allows you to add a work breakdown structure and edit it.
 
+![image](https://user-images.githubusercontent.com/20319268/166624315-7b214e88-d76b-4056-9621-3b355298af4d.png)
+
+![image](https://user-images.githubusercontent.com/20319268/166624327-539fc3e2-2894-4969-a5f5-98f6cf180a4c.png)
+
+![image](https://user-images.githubusercontent.com/20319268/166624402-64769717-465c-4614-bcd8-b09d1b3c5970.png)
+
+![image](https://user-images.githubusercontent.com/20319268/166624467-dd11f49c-6dfc-4be4-80d4-d0bada0ffa1a.png)
+
+
 ## Running the project
 
 This project has been created using **webpack-cli**, you can now run
